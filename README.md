@@ -29,7 +29,7 @@ Die gesamte Installation wird rund 30 Minuten dauern.
 
 Für die Proxykonfiguration im Unternehmensnetz sind gesonderte Einstellungen nötig.
 Wir haben dir hierfür folgende Anleitung erstellt:
-https://presentations.angular.schule/PROXY.html  
+https://workshop.angular.schule/proxy  
 Sollte es Probleme mit dem Proxy geben, melde Dich bitte bei uns, dann finden wir eine Lösung.
 
 
