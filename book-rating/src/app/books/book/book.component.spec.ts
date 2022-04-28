@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Book } from '../shared/book';
 
 import { BookComponent } from './book.component';
 
@@ -20,12 +19,7 @@ describe('BookComponent', () => {
     fixture.detectChanges();
   });
 
-  // WORST CASE, FAKE TESTS
-  it('should work as expected', () => {
-    // should not throw an exception!!!
-    component.book = {} as Book;
-    component.doRateDown();
-    component.doRateUp();
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
