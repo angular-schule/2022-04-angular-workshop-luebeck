@@ -5,12 +5,12 @@ import { Book } from '../shared/book';
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent {
 
   constructor() {
-    setTimeout(() => this.books = [], 3000);
+    // setTimeout(() => this.books = [], 3000);
   }
 
   books: Book[] = [{
