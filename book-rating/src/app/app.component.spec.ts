@@ -1,6 +1,9 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { BookComponent } from './books/book/book.component';
+import { DashboardComponent } from './books/dashboard/dashboard.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,8 +12,11 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        // DashboardComponent, // Integration-Test
+        // BookComponent
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 
