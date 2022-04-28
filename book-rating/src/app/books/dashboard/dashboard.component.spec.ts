@@ -5,14 +5,14 @@ import { Book } from '../shared/book';
 
 import { DashboardComponent } from './dashboard.component';
 
-@Component({
-  selector: 'br-book',
-  template: 'HEy!!',
-})
-export class BookComponentStub {
-  @Input()
-  book?: Book;
-}
+// @Component({
+//   selector: 'br-book',
+//   template: 'HEy!!',
+// })
+// export class BookComponentStub {
+//   @Input()
+//   book?: Book;
+// }
 
 
 describe('DashboardComponent', () => {
@@ -23,8 +23,8 @@ describe('DashboardComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         DashboardComponent,
-        // BookComponent // Integration-Test
-        BookComponentStub
+        BookComponent // Integration-Test
+        // BookComponentStub
       ]
     })
     .compileComponents();
