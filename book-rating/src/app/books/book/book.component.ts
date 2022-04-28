@@ -11,4 +11,15 @@ export class BookComponent {
   @Input()
   book?: Book;
 
+  doRateDown(): void {
+    if (this.book) {
+      this.book.rating--;
+    }
+  }
+
+  doRateUp(): void {
+    if (this.book) {
+      this.book.rating++;
+    }
+  }
 }
