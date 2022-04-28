@@ -17,7 +17,7 @@ export class BookRatingService {
   }
 
   rateDown(book: Book): Book {
-    const rating = Math.max(book.rating + 1, this.maxRating);
+    const rating = Math.max(book.rating - 1, this.minRating);
     return {
       ...book,
       rating
