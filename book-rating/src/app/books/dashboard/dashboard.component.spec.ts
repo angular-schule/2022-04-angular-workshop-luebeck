@@ -15,20 +15,18 @@ import { DashboardComponent } from './dashboard.component';
 //   book?: Book;
 // }
 
+// ALTERNATIVE: https://github.com/ngneat/spectator#mocking-components
 
-fdescribe('DashboardComponent', () => {
+describe(DashboardComponent.name, () => {
   describe('doRateUp()', () => {
 
     let component: DashboardComponent;
     let fixture: ComponentFixture<DashboardComponent>;
-    let bookRatingMock: BookRatingService;
+    let bookRatingMock: jasmine.SpyObj<BookRatingService>;
 
     beforeEach(async () => {
 
-      bookRatingMock = {
-        rateUp: (b: Book) => b,
-        // rateDown: (b: Book) => b // nicht benötigt
-      } as BookRatingService;
+      bookRatingMock = jasmine.createSpyObj(BookRatingService.name, ['rateUp']);
 
       await TestBed.configureTestingModule({
         declarations: [
@@ -54,9 +52,8 @@ fdescribe('DashboardComponent', () => {
 
     it('should forward all calls to BookRating service', () => {
 
-      // const rs = TestBed.inject(BookRatingService);
-      spyOn(bookRatingMock, 'rateUp').and.callThrough();
       const testBook = { } as Book
+      bookRatingMock.rateUp.and.returnValue(testBook);
       component.doRateUp(testBook)
 
       expect(bookRatingMock.rateUp).toHaveBeenCalledOnceWith(testBook);
