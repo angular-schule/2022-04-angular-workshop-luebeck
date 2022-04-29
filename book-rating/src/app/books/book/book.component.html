@@ -10,13 +10,6 @@
     </div>
     <p>{{ book.description }}</p>
 
-    <!---
-    ⚠️⚠️⚠️ BAD PRACTICE ⚠️⚠️⚠️
-
-    2. Separation of Concerns (SoC)
-    3. Objekt wird mutiert (Verstoß gegen Prinzip der Immutability)
-    -->
-
     <button class="btn btn-primary me-2" (click)="doRateDown()">-</button>
     <button class="btn btn-primary" (click)="doRateUp()">+</button>
   </div>

@@ -29,4 +29,12 @@ export class DashboardComponent {
     description: 'Oh nöööö!',
     rating: 1
   }];
+
+  doRateUp(book: Book): void {
+
+  }
+
+  doRateDown(book: Book): void {
+
+  }
 }
