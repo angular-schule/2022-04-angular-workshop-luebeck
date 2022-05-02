@@ -9,7 +9,7 @@ import { BooksModule } from './books/books.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
     // DashboardComponent,
     // BookComponent
   ],
