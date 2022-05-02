@@ -4,7 +4,7 @@
     <label for="isbn">ISBN</label>
     <input formControlName="isbn" type="text" class="form-control" id="isbn">
 
-    <div *ngIf="false"
+    <div *ngIf="isInvalid('isbn')"
       class="feedback-error">Die ISBN ist ungültig.
     </div>
 
@@ -21,6 +21,7 @@
   </div>
 
   <button
+    [disabled]="bookForm.invalid"
     type="submit" class="btn btn-primary mb-4">Senden</button>
 
 </form>
