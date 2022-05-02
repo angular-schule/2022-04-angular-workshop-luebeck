@@ -23,4 +23,8 @@ export class CreateBookComponent {
   // optionales Hands On:
   // hasError(path: string, code: string): boolean
   // --> <div *ngIf="hasError('isbn', 'minlength')">Bitte mindestens 3 Zeichen eingeben</div>
+
+  submitForm(): void {
+
+  }
 }
