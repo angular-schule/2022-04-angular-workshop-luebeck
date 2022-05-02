@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Book } from '../shared/book';
 
@@ -8,6 +8,9 @@ import { Book } from '../shared/book';
   styleUrls: ['./create-book.component.scss']
 })
 export class CreateBookComponent {
+
+  @Output()
+  create = new EventEmitter<Book>();
 
   bookForm = new FormGroup({
     isbn: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -25,15 +28,13 @@ export class CreateBookComponent {
   // --> <div *ngIf="hasError('isbn', 'minlength')">Bitte mindestens 3 Zeichen eingeben</div>
 
   submitForm(): void {
+
     const newBook = {
       ...this.bookForm.value,
       rating: 1
     }
 
-    // Hands On!
-    // 1. Erstelle ein Event mit dem Namen "create"
-    // 2. Subscribe auf das Event im Dashbard
-    // 3. Füge das neue Buch dem Buch-Array hinzu (immutable!)
+    this.create.emit(newBook);
 
     this.bookForm.reset();
   }
