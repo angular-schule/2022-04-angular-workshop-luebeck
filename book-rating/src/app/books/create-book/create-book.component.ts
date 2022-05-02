@@ -25,6 +25,16 @@ export class CreateBookComponent {
   // --> <div *ngIf="hasError('isbn', 'minlength')">Bitte mindestens 3 Zeichen eingeben</div>
 
   submitForm(): void {
+    const newBook = {
+      ...this.bookForm.value,
+      rating: 1
+    }
 
+    // Hands On!
+    // 1. Erstelle ein Event mit dem Namen "create"
+    // 2. Subscribe auf das Event im Dashbard
+    // 3. Füge das neue Buch dem Buch-Array hinzu (immutable!)
+
+    this.bookForm.reset();
   }
 }
