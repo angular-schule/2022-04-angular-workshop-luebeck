@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksModule } from './books/books.module';
+// import { BooksModule } from './books/books.module';
 // import { DashboardComponent } from './books/dashboard/dashboard.component';
 // import { BookComponent } from './book/book.component';
 
@@ -17,7 +17,7 @@ import { BooksModule } from './books/books.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BooksModule,
+    // BooksModule,
     HttpClientModule
   ],
   providers: [],
