@@ -22,11 +22,36 @@ export class CreatingComponent {
 
     /******************************/
 
+    // 1. Observer
+    const observer = {
+      next: (x: string) => this.log(x),
+      error: (err: any) => this.log('ERROR ' + err),
+      complete: () => this.log('COMPLETE')
+    }
+
+    // 2. Observable
+    // 3. Subscriber
     // (ABC)|
-    of('🤪', '😎', '🤩').subscribe(
-      x => this.log(x),
-      err => this.log('ERROR ' + err),
-      () => this.log('COMPLETE'))
+    // const observable = of('🤪', '😎', '🤩');
+    const observable = new Observable<string>(subscriber => {
+
+      subscriber.next('🤪');
+      // subscriber.error('UPSI');
+      // subscriber.next('Ätsch bätsch!')
+
+      const x = setTimeout(() => {subscriber.next('😎'); this.log('🧟‍♀️ Zombie Code! 🧟‍♂️') }, 2000);
+
+      // obs.complete();
+      return () => {
+        this.log('Es wurde unsubscribed! Schnell aufräumen!');
+        clearTimeout(x);
+      }
+    });
+
+    // 4. Subscription
+    const subscription = observable.subscribe(observer);
+
+    setTimeout(() => subscription.unsubscribe(), 1000);
 
     /******************************/
   }
