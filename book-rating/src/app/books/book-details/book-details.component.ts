@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    debugger;
+  }
 
   ngOnInit(): void {
   }
