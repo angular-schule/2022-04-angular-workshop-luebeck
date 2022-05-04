@@ -21,7 +21,9 @@ export class GameScoreComponent {
 
     /******************************/
 
-    
+    this.score$.subscribe(x => console.log(x))
+
+
     /******************************/
 
     this.score$.subscribe({
