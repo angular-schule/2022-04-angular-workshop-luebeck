@@ -23,12 +23,11 @@ export class FromeventComponent {
 
     fromEvent(window, 'resize').pipe(
 
-      // pure (nur gegebenen Parameter verwendet 😃)
-      // map(x => (x.target as Window).innerWidth)
+      map(x => (x.target as Window).innerWidth),
+      debounceTime(2000),
+      startWith(window.innerWidth)
 
-      // impure 😞
-      // map(() => window.innerWidth)
-    ).subscribe(x => console.log(x));
+    ).subscribe(width => this.currentWidth = width);
 
     /******************************/
   }
